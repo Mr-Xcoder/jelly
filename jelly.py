@@ -1338,6 +1338,10 @@ atoms = {
 		arity = 2,
 		call = lambda x, y: int(x in iterable(y))
 	),
+	'ẹ': attrdict(
+		arity = 2,
+		call = lambda x, y: [t + 1 for t, u in enumerate(iterable(x)) if u == y]
+	),
 	'F': attrdict(
 		arity = 1,
 		call = flatten
