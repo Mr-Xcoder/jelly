@@ -1013,11 +1013,9 @@ def split_key(control, data):
 	return result
 
 def split_once(array, needle):
-	if needle not in array:
-		return [array]
 	array = iterable(array, make_digits = True)
-	index = index_of(array, needle) or len(array)
-	return [array[0 : index - 1], array[index :]]
+	index = index_of(array, needle)
+	return [array[0 : index - 1], array[index :]] if index else [array]
 
 def split_prefix(array):
 	array = iterable(array)
